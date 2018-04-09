@@ -21,7 +21,8 @@
 
 
 module mips(
-    input         clk,
+    input              clk,
+    input              reset,
     output wire [31:0] instrAddress,
     input  wire [31:0] currInstruction,
     output wire [31:0] dataMemReadAddress,
@@ -75,6 +76,7 @@ control control(
 
 programCounter pc(
     .clk(clk),
+    .reset(reset),
     .pcIn(pcMuxOut),
     .instructionAddress(instrAddress)
 );

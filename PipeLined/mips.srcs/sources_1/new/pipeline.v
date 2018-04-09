@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/09/2018 08:01:33 PM
+// Create Date: 04/09/2018 04:06:56 PM
 // Design Name: 
-// Module Name: system
+// Module Name: adder
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module system(
-
+module pipeline #(parameter Width=32) (
+    input        clk,
+    input [Width-1:0] inData,
+    output reg [Width-1:0] outData
     );
+    
+    always@(posedge clk)
+    begin
+        outData <= inData;
+    end
+    
 endmodule

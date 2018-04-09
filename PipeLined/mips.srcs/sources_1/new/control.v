@@ -113,21 +113,21 @@ module control(
         end
         else if(swInstruction)
         begin
-            regDst = 1'bx;
+            regDst = 1'b0;
             regWrite = 1'b0;
             ALUSrc = 1'b1;
             ALUOp = 3'b010;
             MemWrite = 1'b1;
-            MemToReg = 1'bx;
+            MemToReg = 1'b0;
         end
         else if(bneInstruction)
         begin
-            regDst = 1'bx;
+            regDst = 1'b0;
             regWrite = 1'b0;
             ALUSrc = 1'b0;
             ALUOp = 3'b110;
             MemWrite = 1'b0;
-            MemToReg = 1'bx;
+            MemToReg = 1'b0;
         end
         else if(addImmInstruction)
         begin
